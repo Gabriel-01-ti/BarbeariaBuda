@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#11100e" />
+  <meta name="description" content="Barbearia moderna com agendamento online rápido e fácil." />
+  <title>Barbearia Black & Gold | Agendamento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topbar"><span>ATENDIMENTO PREMIUM</span><span>Agende seu horário em poucos cliques</span></div>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Barbearia Black & Gold">
+      <span class="brand-mark">B</span><span><strong>BLACK</strong><small>&amp; GOLD BARBERS</small></span>
+    </a>
+    <nav class="nav" id="mainNav">
+      <a href="#servicos">Serviços</a><a href="#equipe">Equipe</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a>
+    </nav>
+    <button class="btn btn-gold header-cta" data-scroll="agendamento">Agendar agora</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">BARBEARIA • ESTILO • PRECISÃO</p>
+        <h1>Seu visual.<br><span>Do seu jeito.</span></h1>
+        <p class="hero-text">Cortes precisos, barba alinhada e uma experiência feita para quem não abre mão de estilo.</p>
+        <div class="hero-actions"><button class="btn btn-gold" data-scroll="agendamento">Agendar horário</button><a class="btn btn-outline" href="#servicos">Ver serviços</a></div>
+        <div class="hero-stats"><div><b>4.9★</b><span>avaliação média</span></div><div><b>+2.000</b><span>clientes atendidos</span></div><div><b>5 anos</b><span>de experiência</span></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section-head"><div><p class="eyebrow">NOSSOS SERVIÇOS</p><h2>Escolha seu estilo</h2></div><p>Serviços pensados para deixar você pronto para qualquer ocasião.</p></div>
+        <div class="service-grid" id="serviceGrid"></div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="equipe">
+      <div class="container">
+        <div class="section-head"><div><p class="eyebrow">NOSSA EQUIPE</p><h2>Profissionais</h2></div><p>Escolha seu barbeiro favorito ou deixe o sistema encontrar o primeiro disponível.</p></div>
+        <div class="team-grid" id="teamGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="agendamento">
+      <div class="container booking-wrap">
+        <div class="booking-copy"><p class="eyebrow">AGENDAMENTO ONLINE</p><h2>Reserve seu horário</h2><p>Sem ligações e sem espera. Escolha o serviço, profissional, data e horário.</p><div class="steps"><span class="active">1</span><i></i><span>2</span><i></i><span>3</span></div></div>
+        <form class="booking-card" id="bookingForm">
+          <div class="form-step active" data-step="1">
+            <h3>1. Serviço e profissional</h3>
+            <label>Serviço<select id="serviceSelect" required></select></label>
+            <label>Profissional<select id="professionalSelect" required></select></label>
+            <div class="summary-mini" id="bookingSummary"></div>
+            <button type="button" class="btn btn-gold full" id="nextStep1">Continuar</button>
+          </div>
+          <div class="form-step" data-step="2">
+            <h3>2. Data e horário</h3>
+            <label>Data<input id="dateSelect" type="date" required /></label>
+            <div class="time-title"><span>Horários disponíveis</span><small id="availabilityMessage"></small></div>
+            <div class="time-grid" id="timeGrid"></div>
+            <input type="hidden" id="selectedTime" />
+            <div class="inline-actions"><button type="button" class="btn btn-outline-dark" data-prev>Voltar</button><button type="button" class="btn btn-gold" id="nextStep2">Continuar</button></div>
+          </div>
+          <div class="form-step" data-step="3">
+            <h3>3. Seus dados</h3>
+            <label>Nome completo<input id="clientName" type="text" placeholder="Seu nome" required /></label>
+            <label>WhatsApp<input id="clientPhone" type="tel" placeholder="(00) 00000-0000" required /></label>
+            <label>E-mail<input id="clientEmail" type="email" placeholder="voce@email.com" /></label>
+            <div class="summary-card" id="finalSummary"></div>
+            <div class="inline-actions"><button type="button" class="btn btn-outline-dark" data-prev>Voltar</button><button class="btn btn-gold" type="submit">Confirmar agendamento</button></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section about" id="sobre">
+      <div class="container about-grid"><div class="about-photo"><span>BLACK<br>&amp; GOLD</span></div><div><p class="eyebrow">A BARBEARIA</p><h2>Mais que um corte.<br>Uma experiência.</h2><p>Ambiente confortável, atendimento próximo e profissionais que entendem de estilo. Nossa missão é fazer você sair daqui melhor do que entrou.</p><div class="about-pills"><span>✓ Atendimento com hora marcada</span><span>✓ Produtos profissionais</span><span>✓ Ambiente climatizado</span></div></div></div>
+    </section>
+
+    <section class="section contact" id="contato"><div class="container contact-card"><div><p class="eyebrow">FALE CONOSCO</p><h2>Pronto para renovar o visual?</h2><p>Rua Exemplo, 123 • Centro • Sua Cidade</p></div><div><a class="btn btn-gold" id="whatsappLink" target="_blank" rel="noopener">Falar no WhatsApp</a><p class="small-note">Horário: Seg–Sáb, 09h às 20h</p></div></div></section>
+  </main>
+
+  <footer class="footer"><div class="container footer-inner"><span>© 2026 Black &amp; Gold Barbers</span><a href="admin.html">Área do barbeiro</a></div></footer>
+
+  <div class="modal" id="successModal" aria-hidden="true"><div class="modal-card"><button class="modal-close" data-close>×</button><div class="success-icon">✓</div><p class="eyebrow">AGENDAMENTO CONFIRMADO</p><h2>Seu horário está reservado!</h2><p id="successText"></p><div class="success-actions"><a class="btn btn-gold" id="successWhatsapp" target="_blank" rel="noopener">Enviar no WhatsApp</a><button class="btn btn-outline-dark" data-close>Fechar</button></div></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
